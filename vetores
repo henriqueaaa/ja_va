@@ -1,14 +1,19 @@
 import java.util.Arrays;
-public class matriz {
+import java.util.Scanner;
+public class vetores {
     public static void main(String[] args) {
-        int[][] tabuleiro = new int[3][3];
-        tabuleiro [0][1] = 1;
+        Scanner scan = new Scanner(System.in);
+        int[] idade = new int[5];
 
-        System.out.println(Arrays.deepToString(tabuleiro));
 
-        for(int i = 0; i< 3; i++){
-            System.out.println(Arrays.toString(tabuleiro[i]));
+
+
+        for (int i = 0 ; i <= 4; i++){
+            System.out.println("Insira uma idade: ");
+            idade[i] = scan.nextInt();
         }
+
+
 
 
     }
