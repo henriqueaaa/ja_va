@@ -1,0 +1,40 @@
+import java.util.Arrays;
+import java.util.Scanner;
+public class ex1 {
+    public static void main(String[] args) {
+        int[] numeros = new int[5];
+        int soma_total = 0;
+        int maior;
+        int menor;
+        Scanner scan = new Scanner(System.in);
+
+        for(int i = 0; i <= 4; i++){
+            System.out.println("Insira um valor: ");
+            numeros[i] = scan.nextInt();
+
+        }
+
+        System.out.println(Arrays.toString(numeros));
+
+        for(int i = 0; i < numeros.length; i++){
+            soma_total = soma_total + numeros[i];
+        }
+        System.out.println("A soma dos elementos do vetor é: " + soma_total);
+
+        maior = numeros[0];
+        menor = numeros[0];
+
+        for (int i = 0; i <= numeros.length - 1; i++){
+            if(maior < numeros[i]){
+                maior = numeros[i];
+
+            }
+            if(menor > numeros[i]){
+                menor = numeros[i];
+            }
+        }
+
+        System.out.println("O maior elemento do vetor é: " + maior);
+        System.out.println("O menor elemento do vetor é: " + menor);
+    }
+}
