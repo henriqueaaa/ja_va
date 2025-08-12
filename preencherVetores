@@ -1,0 +1,21 @@
+public class PreencherVetor {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int tamanho = 5;
+        int[] vetor = new int[tamanho];
+
+        System.out.println("Digite " + tamanho + " números:");
+
+        for (int i = 0; i < vetor.length; i++) {
+            System.out.print("Posição " + i + ": ");
+            vetor[i] = scanner.nextInt();
+        }
+
+        System.out.println("Vetor preenchido:");
+        for (int i = 0; i < vetor.length; i++) {
+            System.out.println("vetor[" + i + "] = " + vetor[i]);
+        }
+
+        scanner.close();
+    }
+}
