@@ -1,0 +1,37 @@
+public class Aluno extends Pessoa {
+    int matricula;
+    double notaFinal;
+
+
+    public Aluno(String nome, int idade, double peso){
+        super(nome, idade, peso);
+
+    }
+    public String falar(String fala){
+        return this.matricula + "11111";
+    }
+
+//    public String apresentar(String fala){
+//    }
+//
+//    public String perguntar(String pergunta){
+//
+//    }
+//
+//    public Aluno setMatricula(int matricula){
+//        this.matricula = matricula;
+//        return this;
+//    }
+//
+//    public int getMatricula(){
+//        return this.matricula;
+//    }
+//
+//    public Aluno setNotaFinal (double notaFinal){
+//        this.notaFinal= notaFinal;
+//    }
+//
+//    public double getNotaFinal (){
+//        return this.notaFinal;
+//    }
+}
