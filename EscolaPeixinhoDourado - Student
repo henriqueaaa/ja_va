@@ -1,0 +1,80 @@
+    public abstract class Student extends Person {
+    private String varRegistrationNumber;
+    private String varCourse;
+    private double[] gradesArray;
+    private int varYear;
+    private int varAttendancePercentage;
+
+    // --- Constructors ---
+    public Student(String varRegistrationNumber) {
+        super(null, 0, null);
+        this.varRegistrationNumber = varRegistrationNumber;
+    }
+
+    public Student(String varRegistrationNumber, String varCourse) {
+        super(null, 0, null);
+        this.varRegistrationNumber = varRegistrationNumber;
+        this.varCourse = varCourse;
+    }
+
+    public Student(String varName, int varAge, String varEmail,
+                   String varRegistrationNumber, String varCourse) {
+        super(varName, varAge, varEmail); // super obrigatório
+        this.varRegistrationNumber = varRegistrationNumber;
+        this.varCourse = varCourse;
+    }
+
+    // --- Getters/Setters encadeáveis ---
+    public String getRegistrationNumber() { return varRegistrationNumber; }
+    public Student setRegistrationNumber(String varRegistrationNumber) {
+        this.varRegistrationNumber = varRegistrationNumber; return this; }
+
+    public String getCourse() { return varCourse; }
+    public Student setCourse(String varCourse) {
+        this.varCourse = varCourse; return this; }
+
+    public double[] getGradesArray() { return gradesArray; }
+    public Student setGradesArray(double[] gradesArray) {
+        this.gradesArray = gradesArray; return this; }
+
+    public int getYear() { return varYear; }
+    public Student setYear(int varYear) {
+        this.varYear = varYear; return this; }
+
+    public int getAttendancePercentage() { return varAttendancePercentage; }
+    public Student setAttendancePercentage(int varAttendancePercentage) {
+        this.varAttendancePercentage = varAttendancePercentage; return this; }
+
+    // --- Métodos herdados ---
+    @Override public String getRoleDescription() { return "Student"; }
+    @Override public String getUniqueIdentifier() { return varRegistrationNumber; }
+
+    // --- 8 métodos obrigatórios (versão mínima) ---
+    public double calculateAverageGrade() {
+        if (gradesArray == null || gradesArray.length == 0) return 0;
+        double sum = 0;
+        for (double g : gradesArray) sum += g;
+        return sum / gradesArray.length;
+    }
+
+    public boolean hasPassed() { return calculateAverageGrade() >= 6; }
+    public boolean hasMinimumAttendance() { return varAttendancePercentage >= 75; }
+
+    public String getInitials() {
+        if (getName() == null) return "";
+        String[] parts = getName().split(" ");
+        String ini = "";
+        for (String p : parts) ini += p.charAt(0);
+        return ini.toUpperCase();
+    }
+
+    public String getFormattedEmail() {
+        return getEmail() == null ? "" : getEmail().toLowerCase().trim();
+    }
+
+    public String getAcademicStatus() {
+        return varCourse + " - Year " + varYear +
+                " | Avg " + calculateAverageGrade() +
+                " | Att " + varAttendancePercentage + "%";
+    }
+}
