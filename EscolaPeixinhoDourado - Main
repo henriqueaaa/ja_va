@@ -1,0 +1,131 @@
+public class Main {
+    public static void main(String[] args) {
+        // --- Criando estudantes usando diferentes construtores ---
+        Student student1 = new Student("2025001") {
+            @Override
+            public String getName() {
+                return "";
+            }
+
+            @Override
+            public Person setName(String name) {
+                return null;
+            }
+
+            @Override
+            public int getAge() {
+                return 0;
+            }
+
+            @Override
+            public Person setAge(int age) {
+                return null;
+            }
+
+            @Override
+            public String getEmail() {
+                return "";
+            }
+
+            @Override
+            public Person setEmail(String email) {
+                return null;
+            }
+        }; // só matrícula
+        Student student2 = new Student("2025002", "Mathematics") {
+            @Override
+            public String getName() {
+                return "";
+            }
+
+            @Override
+            public Person setName(String name) {
+                return null;
+            }
+
+            @Override
+            public int getAge() {
+                return 0;
+            }
+
+            @Override
+            public Person setAge(int age) {
+                return null;
+            }
+
+            @Override
+            public String getEmail() {
+                return "";
+            }
+
+            @Override
+            public Person setEmail(String email) {
+                return null;
+            }
+        }; // matrícula + curso
+        Student student3 = new Student("Alice Johnson", 18, "Alice.Johnson@School.com",
+                "2025003", "Science") {
+            @Override
+            public String getName() {
+                return "";
+            }
+
+            @Override
+            public Person setName(String name) {
+                return null;
+            }
+
+            @Override
+            public int getAge() {
+                return 0;
+            }
+
+            @Override
+            public Person setAge(int age) {
+                return null;
+            }
+
+            @Override
+            public String getEmail() {
+                return "";
+            }
+
+            @Override
+            public Person setEmail(String email) {
+                return null;
+            }
+        }; // completo
+
+        // --- Definindo dados usando method chaining ---
+        student1.setCourse("History")
+                .setYear(2025)
+                .setAttendancePercentage(80)
+                .setGradesArray(new double[]{7.5, 8.0, 6.5});
+
+        student2.setYear(2024)
+                .setAttendancePercentage(70)
+                .setGradesArray(new double[]{5.0, 6.0, 5.5});
+
+        student3.setYear(2025)
+                .setAttendancePercentage(90)
+                .setGradesArray(new double[]{9.0, 8.5, 9.5});
+
+        // --- Criando um array de alunos para simplificar impressão ---
+        Student[] students = {student1, student2, student3};
+
+        // --- Loop para imprimir os dados de cada aluno ---
+        for (Student s : students) {
+            System.out.println("\n--- Student: " + s.getUniqueIdentifier() + " ---");
+            System.out.println("Role: " + s.getRoleDescription());
+            System.out.println("Name: " + s.getName());
+            System.out.println("Initials: " + s.getInitials());
+            System.out.println("Course: " + s.getCourse());
+            System.out.println("Year: " + s.getYear());
+            System.out.println("Average: " + s.calculateAverageGrade());
+            System.out.println("Passed? " + s.hasPassed());
+            System.out.println("Attendance ok? " + s.hasMinimumAttendance());
+            System.out.println("Email: " + s.getFormattedEmail());
+            System.out.println("Status: " + s.getAcademicStatus());
+        }
+    }
+}
